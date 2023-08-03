@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { GlobalService } from './services/global.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { GlobalService } from './services/global.service';
 export class AppComponent  {
   constructor(private router:Router,private globalService:GlobalService){
     this.router.events.subscribe(event=>{
-      if(!globalService.getFromLocal('token')){
+      if(!globalService.getFromLocal('token') && (event instanceof NavigationStart) && !event.url.includes("login")){
         this.router.navigateByUrl("/login");
       }
-    })
+    });
   }
 }

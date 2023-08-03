@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { GlobalService } from 'src/app/services/global.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
