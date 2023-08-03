@@ -1,0 +1,7 @@
+<div class=" w-100 m-auto p-3">
+    <input class="m-2 w-50 d-block" placeholder="login_id" [(ngModel)]="username" type="text" />
+    <input class="m-2 w-50 d-block" placeholder="password" id="password" type="password" [(ngModel)]="password">
+    <button  class="m-2 w-50 d-block btn btn-primary" (click)="login()">Login</button>
+
+    <div *ngIf="false"><h2>Wrong Credentials,Try again!</h2></div>
+</div>
